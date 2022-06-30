@@ -1,5 +1,6 @@
 import numpy as np
-from scipy.misc import imread, imresize
+import imageio
+from PIL import Image
 
 
 def preprocess_input(x, v2=True):
@@ -12,11 +13,11 @@ def preprocess_input(x, v2=True):
 
 
 def _imread(image_name):
-        return imread(image_name)
+        return imageio.imread(image_name)
 
 
 def _imresize(image_array, size):
-        return imresize(image_array, size)
+        return np.array(Image.fromarray(image_array).resize(size))
 
 
 def to_categorical(integer_classes, num_classes=2):
