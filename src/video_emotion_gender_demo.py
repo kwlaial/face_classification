@@ -3,6 +3,7 @@ from statistics import mode
 import cv2
 from keras.models import load_model
 import numpy as np
+import os
 
 from utils.datasets import get_labels
 from utils.inference import detect_faces
@@ -13,7 +14,7 @@ from utils.inference import load_detection_model
 from utils.preprocessor import preprocess_input
 
 # parameters for loading data and images
-detection_model_path = '../trained_models/detection_models/haarcascade_frontalface_default.xml'
+detection_model_path = 'rC:\Users\85261\OneDrive - HKUST Connect\Documents\GitHub\face_classification\hi.txt'
 emotion_model_path = '../trained_models/emotion_models/fer2013_mini_XCEPTION.102-0.66.hdf5'
 gender_model_path = '../trained_models/gender_models/simple_CNN.81-0.96.hdf5'
 emotion_labels = get_labels('fer2013')
